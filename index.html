@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+//rockPaperScissors Game
+//this code chooses the computers move
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; 
+}
+
+function computerPlay(){
+return (computerMove = getRandomInt(1,9)); 
+}
+
+var playerScore= 0;
+var computerScore= 0;
+var computerSelection=" selection error";
+var computerMove = "move error";
+function match(){
+computerPlay();
+console. log(computerMove);
+if(computerMove===1 || computerMove===2 || computerMove===3){
+var computerSelection = "Rock";
+}
+else if(computerMove===4 || computerMove===5 || computerMove===6){
+ computerSelection = "Paper"
+}
+else if(computerMove===7 || computerMove===8 || computerMove===9){
+ computerSelection = "Scissors"
+}
+else{
+computerPlay();
+}
+console.log (computerSelection);
+//here is the code for the player to input their choice
+var playerSelection = prompt("Choose your Move:");
+if(playerSelection === "rock" || playerSelection === "Rock" || playerSelection === "ROCK"){
+  playerSelection="Rock";
+alert("You Chose: " + playerSelection);
+}
+else if(playerSelection === "paper" ||playerSelection === "Paper"|| playerSelection === "PAPER"){
+  playerSelection="Paper";
+alert("You Chose: " + playerSelection);
+}
+else if(playerSelection === "scissors" ||playerSelection === "Scissors"|| playerSelection === "SCISSORS"){
+  playerSelection="Scissors";
+
+alert("You Chose: " + playerSelection);
+}
+else{
+  alert("Oops! That's not an option!");
+}
+// this code runs a game of rock Paper Scissors using the information given above
+
+function game(){
+if(computerSelection=== "Rock" && playerSelection=== "Paper"){
+ alert("Paper beats Rock! Player wins!!")
+ playerScore++;
+}
+else if(computerSelection=== "Paper" && playerSelection=== "Rock"){
+ alert("Paper beats Rock! Computer wins!!")
+ computerScore++;
+}
+else if(computerSelection=== "Scissors" && playerSelection=== "Rock"){
+ alert("Rock beats Scissors! Player wins!!")
+ playerScore++;
+}
+else if(computerSelection=== "Rock" && playerSelection=== "Scissors"){
+ alert("Rock beats Scissors! Computer wins!!")
+ computerScore++;
+
+}
+else if(computerSelection=== "Scissors" && playerSelection=== "Paper"){
+ alert("Scissors beats Paper! Computer wins!!")
+ computerScore++;
+
+}
+else if(computerSelection=== "Paper" && playerSelection=== "Scissors"){
+ alert("Scissors beats Paper! Player wins!!")
+ playerScore++;
+}
+else if(computerSelection===playerSelection){
+  alert("It's a Draw");
+}
+else{
+  console.log("Ut Oh!");
+}}
+game()
+}
+
+//5 games with score alerts after each game
+match()
+alert("Score   Player " + playerScore + ": Computer " + computerScore +".")
+match()
+alert("Score   Player " + playerScore + ": Computer " + computerScore +".")
+match()
+alert("Score   Player " + playerScore + ": Computer " + computerScore +".")
+match()
+alert("Score   Player " + playerScore + ": Computer " + computerScore +".")
+match()
+alert("Final Score   Player " + playerScore + ": Computer " + computerScore +".")
+
+ </script>
+</body>
+</html>
